@@ -1,12 +1,12 @@
-"""!
-@file main.py
-This file contains all the funcitons for controlling
-motor speed and couting revolutions via an encoder
-attatched to the motor
-@author Lucas Sandsor
-@author Jack Barone
-@author Jackson Myers
-@date 25-Jan-2022 
+"""!@file main.py
+    @brief main file responsible for functions used in Lab 2
+    @detail This file contains all the funcitons for controlling
+    motor speed and couting revolutions via an encoder
+    attatched to the motor
+    @author Lucas Sandsor
+    @author Jack Barone
+    @author Jackson Myers
+    @date 25-Jan-2022 
 """
 import motorDriver
 import encoderDriver

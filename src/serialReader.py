@@ -1,20 +1,19 @@
-"""!
-@file main.py
-This file contains all the funcitons printing out
-a graph of the encoder position to help us visualize
-the runtime nature of the motor
-@author Lucas Sandsor
-@author Jack Barone
-@author Jackson Myers
-@date 25-Jan-2022 
-"""from matplotlib import pyplot
+"""!@file main.py
+    This file contains all the funcitons printing out
+    a graph of the encoder position to help us visualize
+    the runtime nature of the motor
+    @author Lucas Sandsor
+    @author Jack Barone
+    @author Jackson Myers
+    @date 25-Jan-2022 
+"""
+from matplotlib import pyplot
 import serial   
 def isnum(string):
-    '''!
-    Tries to convert a string to a number
-    @param string    A string to be converted to a float
-    @return    Returns a boolean that is true if the string
-    can be converted to a number and false if it cannot
+    '''!Tries to convert a string to a number
+        @param string    A string to be converted to a float
+        @return    Returns a boolean that is true if the string
+        can be converted to a number and false if it cannot
     '''
     try:
         float(string)
@@ -23,11 +22,11 @@ def isnum(string):
         return False
     
 def serialHandler():
-    '''!
-    A program to handle the serial input and output and print
-    a nice graph to visualize the runtime movement of the motor
-    Sends a s for 'serial run', and then sends a c to stop the program
-    get the encoder values and time over serial
+    '''!@brief A program to handle the serial input and output 
+        @detail Program handles serial communication and prints
+        a nice graph to visualize the runtime movement of the motor
+        Sends a s for 'serial run', and then sends a c to stop the program
+        get the encoder values and time over serial
     '''
     time_list = []
     tick_list = []
