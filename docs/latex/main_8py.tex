@@ -1,0 +1,59 @@
+\hypertarget{main_8py}{}\doxysection{main.\+py File Reference}
+\label{main_8py}\index{main.py@{main.py}}
+
+
+main file responsible for functions used in Lab 2 @detail This file contains all the funcitons for controlling motor speed and couting revolutions via an encoder attatched to the motor  
+
+
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8py_a8f2f54089b569c0054ca1f819f855a5d}{main.\+moe}}
+\item 
+\mbox{\Hypertarget{main_8py_ac45bc2ecb2400204889bd16197058050}\label{main_8py_ac45bc2ecb2400204889bd16197058050}} 
+{\bfseries main.\+enc} = \mbox{\hyperlink{classencoder_driver_1_1_encoder_driver}{encoder\+Driver.\+Encoder\+Driver}}(pyb.\+Pin.\+board.\+PB6,pyb.\+Pin.\+board.\+PB7, 4)
+\item 
+\mbox{\Hypertarget{main_8py_a424f2bc8c95a3a4452e0468c1f252aed}\label{main_8py_a424f2bc8c95a3a4452e0468c1f252aed}} 
+int {\bfseries main.\+setpoint} = 8192
+\item 
+\mbox{\Hypertarget{main_8py_a6a7c692ddf60a14b3a354fe29476dfcb}\label{main_8py_a6a7c692ddf60a14b3a354fe29476dfcb}} 
+{\bfseries main.\+controller} = \mbox{\hyperlink{classcontrols_1_1_controls}{controls.\+Controls}}(8192, 2000/8192, 0)
+\item 
+\mbox{\Hypertarget{main_8py_ae57958345b17f9ca8597330ba07e1a1c}\label{main_8py_ae57958345b17f9ca8597330ba07e1a1c}} 
+{\bfseries main.\+start\+\_\+time} = utime.\+ticks\+\_\+ms();
+\item 
+\mbox{\Hypertarget{main_8py_ada24c0f5d143f130aceaf05ae35895fd}\label{main_8py_ada24c0f5d143f130aceaf05ae35895fd}} 
+{\bfseries main.\+end}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+main file responsible for functions used in Lab 2 @detail This file contains all the funcitons for controlling motor speed and couting revolutions via an encoder attatched to the motor 
+
+This file contains all the funcitons printing out a graph of the encoder position to help us visualize the runtime nature of the motor.
+
+\begin{DoxyAuthor}{Author}
+Lucas Sandsor 
+
+Jack Barone 
+
+Jackson Myers 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25-\/Jan-\/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8py_a8f2f54089b569c0054ca1f819f855a5d}\label{main_8py_a8f2f54089b569c0054ca1f819f855a5d}} 
+\index{main.py@{main.py}!moe@{moe}}
+\index{moe@{moe}!main.py@{main.py}}
+\doxysubsubsection{\texorpdfstring{moe}{moe}}
+{\footnotesize\ttfamily main.\+moe}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \mbox{\hyperlink{classmotor_driver_1_1_motor_driver}{motorDriver.MotorDriver}}(pyb.Pin.board.PA10,}
+\DoxyCodeLine{2         pyb.Pin.board.PB4, pyb.Pin.board.PB5, 3)}
+
+\end{DoxyCode}
