@@ -36,7 +36,7 @@ def serialHandler():
         s_port.write(b'c')
         s_port.write(b'\r')
         for line in s_port:
-            #manually sent EOF
+            #manually sent EOF needed because serial port doesn't have EOF
             if b'EOF' in line:
                 break
             if b',' in line:

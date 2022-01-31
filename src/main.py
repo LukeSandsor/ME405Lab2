@@ -29,25 +29,27 @@ if __name__ == "__main__":
     setpoint = 8192
     controller = controls.Controls(8192, 2000/8192, 0)
     enc.zero()
-    '''50/4096 means that the motor will run at half speed when it
-    is two rotation
+    '''2000/8192 means that the motor will run at rate very fast and
+    then slow down exponentially as it approaches a full rotation (8192 tcisk)
     '''
     while(input() != 'c'):
         start_time = utime.ticks_ms();
         while(utime.ticks_diff(utime.ticks_ms(), start_time) <  500):
             #An infinite loop to see it go back and forth for testing
             moe.set_duty_cycle(controller.controlLoop(enc.read()))
-            #print("UPDATING")
             utime.sleep_ms(10)
+            #A 10 millisecond sampling frequency
             controller.store_list(utime.ticks_diff(utime.ticks_ms(), start_time), enc.read())
         moe.set_duty_cycle(0)
+        #stop motor and reset encoder after cycle
         enc.zero()
     moe.set_duty_cycle(0)
+    #stop motor again for redundancy
     for i in range(len(controller.time_list)):
             print(controller.time_list[i], end='')
             print(',', end = '')
             print(controller.tick_list[i])
-            #manually sent EOF
+    #manually sent EOF
     print(b'EOF')
 
 
